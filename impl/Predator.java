@@ -14,7 +14,7 @@ public class Predator extends Character implements IZombie{
     /**
      * A tank starts with 100 points of health
      */
-    public Tank() {
+    public Predator() {
         super(100);
     }
 

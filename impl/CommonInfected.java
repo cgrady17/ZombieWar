@@ -14,7 +14,7 @@ public class CommonInfected extends Character implements IZombie{
     /**
      * A Common Infected starts with 50 points of health
      */
-    public Tank() {
+    public CommonInfected() {
         super(50);
     }
 
