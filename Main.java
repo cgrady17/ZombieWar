@@ -67,6 +67,14 @@ public class Main {
     //      turn to attack.  For each zombie that is still alive, attack
     //      each suvivor that is still alive.  Repeat this cycle until
     //      all the zombies are all dead or all the survivors are all dead.
+
+    /*for (int i = 0; i < zombies.length; i++) {
+      IZombie thisZombie = zombies[i];
+      for(int j = 0; j < survivors.length; j++) {
+        ISurvivor thisSurvivor = survivors[j];
+        thisSurvivor.attack(thisZombie);
+      }
+    }*/
     
 
     
