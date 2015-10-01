@@ -20,7 +20,7 @@ public class Child extends Character implements ISurvivor{
 	 * A soldier starts with 100 points of health
 	 */
 	public Child() {
-		super(50);
+		super(10);
 	}
 
 	@Override
