@@ -60,7 +60,13 @@ public class Main {
   public static void addKill(ICharacter dead, ICharacter killer){
 	  String killPair = killer.getID()+" killed "+dead.getID();
 	  killList.add(killPair);
-  }
+  }  
+  
+  public static void printKills(){
+	  for(String killPair: killList){
+		  System.out.println(killPair);		  
+	  }
+  }  
 
   /**
    * @param args the command line arguments
@@ -79,17 +85,46 @@ public class Main {
     //      each suvivor that is still alive.  Repeat this cycle until
     //      all the zombies are all dead or all the survivors are all dead.
 
-//    while
-    
-    for (int i = 0; i < zombies.length; i++) {
-      IZombie thisZombie = zombies[i];
-      for(int j = 0; j < survivors.length; j++) {
-        ISurvivor thisSurvivor = survivors[j];
-        thisSurvivor.attack(thisZombie);
-      }
-    }
-    
+		while (!allDead(survivors) && !allDead(zombies)) {
+			// survivors attack first
+			for (int s = 0; s < survivors.length; s++) {
+				// only living survivors can attack
+				ISurvivor thisSurvivor = survivors[s];
+				if (thisSurvivor.isAlive())
+					for (int z = 0; z < zombies.length; z++) {
+						IZombie thisZombie = zombies[z];
+						// only living zombies need be attacked
+						if (thisZombie.isAlive()){
+							thisSurvivor.attack(thisZombie);
+							// tallie the dead!
+							if(!thisZombie.isAlive()){
+								addKill(thisZombie, thisSurvivor);
+							}
+						}
+					}
+			}
 
+			// zombies turn to attack
+			for (int z = 0; z < zombies.length; z++){
+				// only living zombies can attack
+				IZombie thisZombie = zombies[z];
+				if (thisZombie.isAlive())
+					for (int s = 0; s < survivors.length; s++) {
+						ISurvivor thisSurvivor = survivors[s];
+						// only living survivors need be attacked
+						if (thisSurvivor.isAlive()){
+							thisZombie.attack(thisSurvivor);
+							// tallie the dead!
+							if(!thisSurvivor.isAlive()){
+								addKill(thisSurvivor, thisZombie);
+							}
+						}
+					}
+			}
+
+		}
+		
+		printKills();
     
 
     if (allDead(survivors)) {
