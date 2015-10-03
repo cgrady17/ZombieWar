@@ -9,12 +9,14 @@ import zombiewar.intf.IZombie;
  * @author Christopher Witt
  */
 public class Student extends Character implements ISurvivor{
-
+	private static int charcterCount = 0;
+	
 	/**
 	 * A student starts with 35 points of health
 	 */
 	public Student() {
 		super(35);
+		this.id = ++charcterCount;
 	}
 
 	@Override

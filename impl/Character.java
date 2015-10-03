@@ -5,6 +5,7 @@ import zombiewar.intf.ICharacter;
 public abstract class Character implements ICharacter{
 	
 	public int health;
+	public int id;
 	
 	Character(int health){
 		this.health = health;

@@ -10,12 +10,14 @@ import zombiewar.intf.IZombie;
  * @author thaoc
  */
 public class CommonInfected extends Character implements IZombie{
-
+	private static int charcterCount = 0;
+	
     /**
      * A Common Infected starts with 50 points of health
      */
     public CommonInfected() {
         super(50);
+        this.id = ++charcterCount;
     }
 
     /**

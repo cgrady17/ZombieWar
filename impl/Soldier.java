@@ -15,12 +15,14 @@ import zombiewar.intf.IZombie;
  * @author thaoc
  */
 public class Soldier extends Character implements ISurvivor{
-
+	private static int charcterCount = 0;
+	
 	/**
 	 * A soldier starts with 100 points of health
 	 */
 	public Soldier() {
 		super(100);
+		this.id = ++charcterCount;
 	}
 
 	@Override

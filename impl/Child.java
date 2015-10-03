@@ -13,12 +13,14 @@ import zombiewar.intf.IZombie;
  * 
  */
 public class Child extends Character implements ISurvivor{
-
+	private static int charcterCount = 0;
+	
 	/**
 	 * A child starts with 10 points of health
 	 */
 	public Child() {
 		super(10);
+		this.id = ++charcterCount;
 	}
 
 	@Override

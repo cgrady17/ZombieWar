@@ -10,12 +10,14 @@ import zombiewar.intf.IZombie;
  * @author thaoc
  */
 public class Predator extends Character implements IZombie{
-
+	private static int charcterCount = 0;
+	
     /**
      * A predator starts with 100 points of health
      */
     public Predator() {
         super(100);
+        this.id = ++charcterCount;
     }
 
     /**

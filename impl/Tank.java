@@ -10,12 +10,14 @@ import zombiewar.intf.IZombie;
  * @author thaoc
  */
 public class Tank extends Character implements IZombie{
-
+	private static int charcterCount = 0;
+	
 	/**
 	 * A tank starts with 150 points of health
 	 */
 	public Tank() {
 		super(150);
+		this.id = ++charcterCount;
 	}
 
 	/**
