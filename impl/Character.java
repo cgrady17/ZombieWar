@@ -21,5 +21,9 @@ public abstract class Character implements ICharacter{
 		return (health > 0);
 	}
 	
+	@Override
+	public String getID(){
+		return getClass().getName().substring(15)+" "+id;
+	}
 	
 }

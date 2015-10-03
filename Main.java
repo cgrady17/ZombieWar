@@ -1,5 +1,7 @@
 package zombiewar;
 
+import java.util.ArrayList;
+
 import zombiewar.impl.CharacterFactory;
 import zombiewar.intf.ICharacter;
 import zombiewar.intf.ICharacterFactory;
@@ -13,6 +15,7 @@ import zombiewar.intf.IZombie;
 public class Main {
   
   private static final ICharacterFactory factory = CharacterFactory.instance;
+  private static ArrayList<String> killList = new ArrayList<String>();
   
   public static IZombie[] randomZombies() {
     int numZombies = (int) (Math.random() * 10);
@@ -50,6 +53,14 @@ public class Main {
     }
     return allDead;
   }
+  
+  /**
+   * keep track of who killed who
+   */
+  public static void addKill(ICharacter dead, ICharacter killer){
+	  String killPair = killer.getID()+" killed "+dead.getID();
+	  killList.add(killPair);
+  }
 
   /**
    * @param args the command line arguments
@@ -68,13 +79,15 @@ public class Main {
     //      each suvivor that is still alive.  Repeat this cycle until
     //      all the zombies are all dead or all the survivors are all dead.
 
-    /*for (int i = 0; i < zombies.length; i++) {
+//    while
+    
+    for (int i = 0; i < zombies.length; i++) {
       IZombie thisZombie = zombies[i];
       for(int j = 0; j < survivors.length; j++) {
         ISurvivor thisSurvivor = survivors[j];
         thisSurvivor.attack(thisZombie);
       }
-    }*/
+    }
     
 
     
