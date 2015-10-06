@@ -9,15 +9,13 @@ import zombiewar.intf.ISurvivor;
 import zombiewar.intf.IZombie;
 
 /**
- * A soldier is one of the strongest survivor because he wears armor 
- * and carries a weapon.
+ * A child is the weakest survivor against zombies
  * 
- * @author thaoc
  */
 public class Child extends Character implements ISurvivor{
 
 	/**
-	 * A soldier starts with 100 points of health
+	 * A child starts with 10 points of health
 	 */
 	public Child() {
 		super(10);
