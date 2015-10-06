@@ -12,7 +12,7 @@ import zombiewar.intf.IZombie;
 public class Predator extends Character implements IZombie{
 
     /**
-     * A tank starts with 100 points of health
+     * A predator starts with 100 points of health
      */
     public Predator() {
         super(100);
