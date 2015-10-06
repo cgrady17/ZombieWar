@@ -11,7 +11,7 @@ import zombiewar.intf.IZombie;
 public class Student extends Character implements ISurvivor{
 
 	/**
-	 * A soldier starts with 100 points of health
+	 * A student starts with 35 points of health
 	 */
 	public Student() {
 		super(35);
