@@ -9,7 +9,7 @@ import zombiewar.intf.ISurvivor;
 import zombiewar.intf.IZombie;
 
 /**
- *
+   we made changes.*
  * @author thaoc
  */
 public class Main {
